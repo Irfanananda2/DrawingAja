@@ -1,0 +1,5 @@
+E:\CGA\Application\DrawingDemoTest.exe
+E:\CGA\Application\DrawingDemoTest.dll
+E:\CGA\Application\DrawingDemoTest.deps.json
+E:\CGA\Application\DrawingDemoTest.runtimeconfig.json
+E:\CGA\Application\DrawingDemoTest.pdb

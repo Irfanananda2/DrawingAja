@@ -109,7 +109,32 @@
         Form1.PictureBox1.Image = Form1.BMP
     End Sub
     Public Sub MidPoint(x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer, R As Integer, G As Integer, B As Integer)
-
+        Dim dx As Integer, dy As Integer
+        dx = Math.Abs(x2 - x1)
+        dy = Math.Abs(y2 - y1)
+        Dim m, x, y, xEnd
+        m = 2 * dy - dx
+        Dim Twody = 2 * dy, Twodydx = 2 * (dy - dx)
+        If (x1 > x2) Then
+            x = x2
+            y = y2
+            xEnd = x1
+        Else
+            x = x1
+            y = y1
+            xEnd = x2
+        End If
+        Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+        While (x < xEnd)
+            x += 1
+            If (m < 0) Then
+                m += Twody
+            Else
+                y += 1
+                m += Twodydx
+            End If
+            Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+        End While
     End Sub
     Sub Clear()
         For i As Integer = 0 To Form1.BMP.Width - 1

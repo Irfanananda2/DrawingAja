@@ -16,3 +16,21 @@ E:\Temp Assignment\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\Draw
 E:\Temp Assignment\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\ref\DrawingDemoTest.dll
 E:\Temp Assignment\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.pdb
 E:\Temp Assignment\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.genruntimeconfig.cache
+E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.vbprojAssemblyReference.cache
+E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.dll
+E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\ref\DrawingDemoTest.dll
+E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.pdb
+E:\CGA\DrawingDemoTest\DrawingDemoTest\bin\Debug\net5.0-windows\DrawingDemoTest.exe
+E:\CGA\DrawingDemoTest\DrawingDemoTest\bin\Debug\net5.0-windows\DrawingDemoTest.deps.json
+E:\CGA\DrawingDemoTest\DrawingDemoTest\bin\Debug\net5.0-windows\DrawingDemoTest.runtimeconfig.json
+E:\CGA\DrawingDemoTest\DrawingDemoTest\bin\Debug\net5.0-windows\DrawingDemoTest.runtimeconfig.dev.json
+E:\CGA\DrawingDemoTest\DrawingDemoTest\bin\Debug\net5.0-windows\DrawingDemoTest.dll
+E:\CGA\DrawingDemoTest\DrawingDemoTest\bin\Debug\net5.0-windows\ref\DrawingDemoTest.dll
+E:\CGA\DrawingDemoTest\DrawingDemoTest\bin\Debug\net5.0-windows\DrawingDemoTest.pdb
+E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.Form1.resources
+E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.vbproj.GenerateResource.cache
+E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.GeneratedMSBuildEditorConfig.editorconfig
+E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.AssemblyInfoInputs.cache
+E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.AssemblyInfo.vb
+E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.vbproj.CoreCompileInputs.cache
+E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.genruntimeconfig.cache
