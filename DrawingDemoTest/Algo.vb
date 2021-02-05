@@ -109,32 +109,89 @@
         Form1.PictureBox1.Image = Form1.BMP
     End Sub
     Public Sub MidPoint(x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer, R As Integer, G As Integer, B As Integer)
-        Dim dx As Integer, dy As Integer
-        dx = Math.Abs(x2 - x1)
-        dy = Math.Abs(y2 - y1)
-        Dim m, x, y, xEnd
-        m = 2 * dy - dx
-        Dim Twody = 2 * dy, Twodydx = 2 * (dy - dx)
-        If (x1 > x2) Then
-            x = x2
-            y = y2
-            xEnd = x1
-        Else
-            x = x1
-            y = y1
-            xEnd = x2
-        End If
-        Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
-        While (x < xEnd)
-            x += 1
-            If (m < 0) Then
-                m += Twody
-            Else
-                y += 1
-                m += Twodydx
+        Dim dx As Integer, dy As Integer, x As Integer, y As Integer
+        Dim p As Integer, dR, dUR, d, dL, dUL
+
+        dx = x2 - x1
+        dy = y2 - y1
+        x = x1
+        y = y1
+        If Math.Abs(dx) >= Math.Abs(dy) Then
+            If x1 < x2 And y1 < y2 Then         'Case 9 MidPoint
+                dR = 2 * dy
+                dUR = 2 * (dy - dx)
+                d = 2 * dy - dx
+                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                While x <= x2
+                    If d > 0 Then
+                        x += 1
+                        y += 1
+                        d += dUR
+                    Else
+                        x += 1
+                        d += dR
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            ElseIf x1 > x2 And y1 < y2 Then         'Case 12 Midpoint
+                dL = -2 * dy
+                dUL = -2 * (dy + dx)
+                d = (-2 * dy) + dx
+                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                While x >= x2
+                    If d < 0 Then
+                        x -= 1
+                        y += 1
+                        d += dUL
+                    Else
+                        x -= 1
+                        d += dL
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            ElseIf x1 > x2 And y1 > y2 Then
+                dL = -2 * dy
+                dUL = -2 * (dy - dx)
+                d = (-2 * dy) + dx
+                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                While x >= x2
+                    If d > 0 Then
+                        x -= 1
+                        y -= 1
+                        d += dUL
+                    Else
+                        x -= 1
+                        d += dL
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            ElseIf x1 < x2 And y1 > y2 Then     'Case 16
+                dR = 2 * dy
+                dUR = 2 * (dy + dx)
+                d = 2 * dy + dx
+                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                While x <= x2
+                    If d < 0 Then
+                        x += 1
+                        y -= 1
+                        d += dUR
+                    Else
+                        x += 1
+                        d += dR
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
             End If
-            Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
-        End While
+        ElseIf dy > dx Then
+            If x1 < x2 And y1 < y2 Then
+
+        End If
+        End If
+        Form1.PictureBox1.Image = Form1.BMP
+    End Sub
+    Public Sub Test(x1 As Integer, y1 As Integer, R As Integer, G As Integer, B As Integer)
+        Form1.BMP.SetPixel(x1, y1, Color.FromArgb(R, G, B))
+        Form1.PictureBox1.Image = Form1.BMP
     End Sub
     Sub Clear()
         For i As Integer = 0 To Form1.BMP.Width - 1

@@ -8,7 +8,12 @@
     End Sub
 
     Private Sub btnDraw_Click(sender As Object, e As EventArgs) Handles btnDraw.Click
-        Algo.MidPoint(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
+        If RadDDA.Checked Then
+            Algo.DDA(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
+        ElseIf RadMidPoint.Checked Then
+            Algo.MidPoint(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
+        End If
+
     End Sub
     Private Sub NumRed_ValueChanged(sender As Object, e As EventArgs) Handles NumRed.ValueChanged
         Red = Convert.ToInt32(NumRed.Value)

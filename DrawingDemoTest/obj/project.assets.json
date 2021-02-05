@@ -8,19 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {}
+    "C:\\Users\\anand\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CGA\\DrawingDemoTest\\DrawingDemoTest\\DrawingDemoTest.vbproj",
+      "projectUniqueName": "E:\\Temp Assignment\\DrawingDemoTest\\DrawingDemoTest\\DrawingDemoTest.vbproj",
       "projectName": "DrawingDemoTest",
-      "projectPath": "E:\\CGA\\DrawingDemoTest\\DrawingDemoTest\\DrawingDemoTest.vbproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "E:\\CGA\\DrawingDemoTest\\DrawingDemoTest\\obj\\",
+      "projectPath": "E:\\Temp Assignment\\DrawingDemoTest\\DrawingDemoTest\\DrawingDemoTest.vbproj",
+      "packagesPath": "C:\\Users\\anand\\.nuget\\packages\\",
+      "outputPath": "E:\\Temp Assignment\\DrawingDemoTest\\DrawingDemoTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\anand\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
