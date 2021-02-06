@@ -12,6 +12,8 @@
             Algo.DDA(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
         ElseIf RadMidPoint.Checked Then
             Algo.MidPoint(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
+        ElseIf radTest.Checked Then
+            Algo.Test(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
         End If
 
     End Sub

@@ -47,6 +47,7 @@ Partial Class Form1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadMidPoint = New System.Windows.Forms.RadioButton()
         Me.RadDDA = New System.Windows.Forms.RadioButton()
+        Me.radTest = New System.Windows.Forms.RadioButton()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumY1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumX2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -244,6 +245,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.radTest)
         Me.GroupBox1.Controls.Add(Me.RadMidPoint)
         Me.GroupBox1.Controls.Add(Me.RadDDA)
         Me.GroupBox1.Location = New System.Drawing.Point(556, 210)
@@ -274,6 +276,17 @@ Partial Class Form1
         Me.RadDDA.TabStop = True
         Me.RadDDA.Text = "DDA"
         Me.RadDDA.UseVisualStyleBackColor = True
+        '
+        'radTest
+        '
+        Me.radTest.AutoSize = True
+        Me.radTest.Location = New System.Drawing.Point(16, 91)
+        Me.radTest.Name = "radTest"
+        Me.radTest.Size = New System.Drawing.Size(56, 24)
+        Me.radTest.TabIndex = 2
+        Me.radTest.TabStop = True
+        Me.radTest.Text = "Test"
+        Me.radTest.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -345,4 +358,5 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents RadMidPoint As RadioButton
     Friend WithEvents RadDDA As RadioButton
+    Friend WithEvents radTest As RadioButton
 End Class
