@@ -87,59 +87,144 @@
     End Sub
     Public Sub MidPoint(x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer, R As Integer, G As Integer, B As Integer)
         Dim dx As Integer, dy As Integer, x As Integer, y As Integer
-        Dim dR, dUR, d
-        Dim t_dy, t_dx, x_inc, y_inc
+        Dim p As Integer, dR, dUR, d, dL, dUL, dU
 
         dx = x2 - x1
         dy = y2 - y1
         x = x1
         y = y1
-
-        If x1 < x2 Then
-            t_dy = dy
-            x_inc = 1
-        ElseIf x1 > x2 Then
-            t_dy = -dy
-            x_inc = -1
-        End If
-        If y1 < y2 Then
-            t_dx = dx
-            y_inc = 1
-        ElseIf y1 > y2 Then
-            t_dx = -dx
-            y_inc = -1
-        End If
-        Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
         If Math.Abs(dx) >= Math.Abs(dy) Then
-            dR = 2 * t_dy
-            dUR = 2 * (t_dy - t_dx)
-            d = 2 * t_dy - t_dx
-            While x < x2 Or x > x2
-                If d > 0 Or d < 0 Then
-                    x += x_inc
-                    y += y_inc
-                    d += dUR
-                Else
-                    x += x_inc
-                    d += dR
-                End If
+            If x1 < x2 And y1 <= y2 Then         'Case 9 MidPoint
+                dR = 2 * dy
+                dUR = 2 * (dy - dx)
+                d = 2 * dy - dx
                 Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
-            End While
+                While x < x2
+                    If d > 0 Then
+                        x += 1
+                        y += 1
+                        d += dUR
+                    Else
+                        x += 1
+                        d += dR
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            ElseIf x1 > x2 And y1 < y2 Then         'Case 12 Midpoint
+                dL = -2 * dy
+                dUL = -2 * (dy + dx)
+                d = (-2 * dy) + dx
+                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                While x > x2
+                    If d < 0 Then
+                        x -= 1
+                        y += 1
+                        d += dUL
+                    Else
+                        x -= 1
+                        d += dL
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            ElseIf x1 > x2 And y1 >= y2 Then         'Case 13 Midpoint
+                dL = -2 * dy
+                dUL = -2 * (dy - dx)
+                d = (-2 * dy) + dx
+                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                While x > x2
+                    If d > 0 Then
+                        x -= 1
+                        y -= 1
+                        d += dUL
+                    Else
+                        x -= 1
+                        d += dL
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            ElseIf x1 < x2 And y1 > y2 Then         'Case 16 Midpoint
+                dR = 2 * dy
+                dUR = 2 * (dy + dx)
+                d = 2 * dy + dx
+                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                While x < x2
+                    If d < 0 Then
+                        x += 1
+                        y -= 1
+                        d += dUR
+                    Else
+                        x += 1
+                        d += dR
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            End If
         ElseIf Math.Abs(dy) > Math.Abs(dx) Then
-            dR = 2 * -t_dx
-            dUR = 2 * (t_dy - t_dx)
-            d = t_dy - 2 * t_dx
-            While y < y2 Or y > y2
-                If d > 0 Or d < 0 Then
-                    x += x_inc
-                    y += y_inc
-                    d += dUR
-                Else
-                    y += y_inc
-                    d += dR
-                End If
+            If x1 <= x2 And y1 < y2 Then             'Case 10 Midpoint
+                dU = 2 * -dx
+                dUR = 2 * (dy - dx)
+                d = dy - 2 * dx
                 Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
-            End While
+                While y < y2
+                    If d < 0 Then
+                        x += 1
+                        y += 1
+                        d += dUR
+                    Else
+                        y += 1
+                        d += dU
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            ElseIf x1 > x2 And y1 < y2 Then         'Case 11 Midpoint
+                dU = 2 * -dx
+                dUL = -2 * (dy + dx)
+                d = -dy - 2 * dx
+                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                While y < y2
+                    If d > 0 Then
+                        x -= 1
+                        y += 1
+                        d += dUL
+                    Else
+                        y += 1
+                        d += dU
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            ElseIf x1 >= x2 And y1 > y2 Then         'Case 14 Midpoint
+                dU = 2 * dx
+                dUL = 2 * (-dy + dx)
+                d = -dy + 2 * dx
+                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                While y > y2
+                    If d < 0 Then
+                        x -= 1
+                        y -= 1
+                        d += dUL
+                    Else
+                        y -= 1
+                        d += dU
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            ElseIf x1 < x2 And y1 > y2 Then         'Case 15 Midpoint
+                dU = 2 * dx
+                dUR = 2 * (dy + dx)
+                d = dy + 2 * dx
+                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                While y > y2
+                    If d > 0 Then
+                        x += 1
+                        y -= 1
+                        d += dUR
+                    Else
+                        y -= 1
+                        d += dU
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            End If
         End If
         Form1.PictureBox1.Image = Form1.BMP
     End Sub
@@ -177,38 +262,67 @@
                     x += x_inc
                     y += y_inc
                     d += dUR
-                Else
-                    If i = 0 Then
-                        i += 1
-                    ElseIf i = 1 Then
-                        i = 2
-                    ElseIf i = 2 And dif = 0 Then
-                        i = 2
-                        dif += 1
-                    ElseIf i = 2 And dif = 1 Then
-                        i = 1
-                        dif -= 1
+                    If Form1.chkbxPattern.Checked Then
+
                     End If
-                    x += i
-                    d += dR
+                Else
+                    If Form1.chkbxPattern.Checked Then
+                        If i = 0 Then
+                            i += 1
+                        ElseIf i = 1 Then
+                            i = 2
+                        ElseIf i = 2 And dif = 0 Then
+                            i = 2
+                            dif += 1
+                        ElseIf i = 2 And dif = 1 Then
+                            i = 1
+                            dif -= 1
+                        End If
+
+                        x += i
+                        d += dR
+                    Else
+                        x += x_inc
+                        d += dR
+                    End If
                 End If
+
                 Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
             End While
         ElseIf Math.Abs(dy) > Math.Abs(dx) Then
             dR = 2 * -t_dx
             dUR = 2 * (t_dy - t_dx)
             d = t_dy - 2 * t_dx
-            While y < y2 Or y > y2
-                If d > 0 Or d < 0 Then
-                    x += x_inc
-                    y += y_inc
-                    d += dUR
-                Else
-                    y += y_inc
-                    d += dR
-                End If
-                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
-            End While
+            If d = 0 Then
+                y += y_inc
+                d += dR
+            End If
+            If d > 0 Then
+                While y < y2 Or y > y2
+                    If d > 0 Then
+                        x += x_inc
+                        y += y_inc
+                        d += dUR
+                    Else
+                        y += y_inc
+                        d += dR
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            ElseIf d < 0 Then
+                While y < y2 Or y > y2
+                    If d < 0 Then
+                        x += x_inc
+                        y += y_inc
+                        d += dUR
+                    Else
+                        y += y_inc
+                        d += dR
+                    End If
+                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                End While
+            End If
+
         End If
         Form1.PictureBox1.Image = Form1.BMP
     End Sub

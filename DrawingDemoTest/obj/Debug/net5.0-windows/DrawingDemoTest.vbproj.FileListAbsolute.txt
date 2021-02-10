@@ -34,3 +34,4 @@ E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.
 E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.AssemblyInfo.vb
 E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.vbproj.CoreCompileInputs.cache
 E:\CGA\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.genruntimeconfig.cache
+E:\Temp Assignment\DrawingDemoTest\DrawingDemoTest\obj\Debug\net5.0-windows\DrawingDemoTest.Resources.resources
