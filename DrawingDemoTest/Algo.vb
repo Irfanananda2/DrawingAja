@@ -262,17 +262,23 @@
                 dUR = -dUR
             End If
             d = 2 * t_dy - t_dx
+            Form1.BMP.SetPixel(x, y + 1, Color.FromArgb(R, G, B))
+            Form1.BMP.SetPixel(x, y + 2, Color.FromArgb(R, G, B))
+            Form1.BMP.SetPixel(x, y + 3, Color.FromArgb(R, G, B))
+            Form1.BMP.SetPixel(x, y + 4, Color.FromArgb(R, G, B))
             While x < x2 Or x > x2
                 If d > 0 Then
                     If Form1.chkbxPattern.Checked Then
-                        If x < x2 Then
+                        If x < x2 Then                          'Dotted for x1 < x2
                             If x_inc = 1 Then
                                 x_inc = 2
                                 d += dUR
+                                y += y_inc
                             ElseIf x_inc = 2 And dif = 0 Then
                                 x_inc = 2
                                 dif += 1
                                 d += dUR
+                                y += y_inc
                             ElseIf x_inc = 2 And dif = 1 Then
                                 x_inc = 1
                                 dif -= 1
@@ -282,8 +288,31 @@
                                 x -= 1
                             End If
                         End If
-                        y += y_inc
-                        d += dUR
+                        If x > x2 Then                      'Dotted for x1 > x2
+                            If x_inc = -1 Then
+                                x_inc = -2
+                                d += dUR
+                                y += y_inc
+                            ElseIf x_inc = -2 And dif = 0 Then
+                                x_inc = -2
+                                dif += 1
+                                d += dUR
+                                y += y_inc
+                            ElseIf x_inc = -2 And dif = 1 Then
+                                x_inc = -1
+                                dif -= 1
+                            End If
+                            x += x_inc
+                            If x <= x2 Then
+                                x += 1
+                            End If
+                        End If
+                        If d > 0 Then
+                            d += dUR
+                            y += y_inc
+                        Else
+                            d += dR
+                        End If
                     Else
                         x += x_inc
                         y += y_inc
@@ -295,6 +324,7 @@
                             If x_inc = 1 Then
                                 x_inc = 2
                                 d += dR
+
                             ElseIf x_inc = 2 And dif = 0 Then
                                 x_inc = 2
                                 dif += 1
@@ -308,13 +338,42 @@
                                 x -= 1
                             End If
                         End If
-                        d += dR
+                        If x > x2 Then                      'Dotted for x1 > x2
+                            If x_inc = -1 Then
+                                x_inc = -2
+                                d += dUR
+                                y += y_inc
+                            ElseIf x_inc = -2 And dif = 0 Then
+                                x_inc = -2
+                                dif += 1
+                                d += dUR
+                                y += y_inc
+                            ElseIf x_inc = -2 And dif = 1 Then
+                                x_inc = -1
+                                dif -= 1
+                            End If
+                            x += x_inc
+                            If x <= x2 Then
+                                x += 1
+                            End If
+                        End If
+                        If d > 0 Then
+                            d += dUR
+                            y += y_inc
+                        Else
+                            d += dR
+                        End If
+
                     Else
                         x += x_inc
                         d += dR
                     End If
                 End If
                 Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                Form1.BMP.SetPixel(x, y + 1, Color.FromArgb(R, G, B))
+                Form1.BMP.SetPixel(x, y + 2, Color.FromArgb(R, G, B))
+                Form1.BMP.SetPixel(x, y + 3, Color.FromArgb(R, G, B))
+                Form1.BMP.SetPixel(x, y + 4, Color.FromArgb(R, G, B))
             End While
         ElseIf Math.Abs(dy) > Math.Abs(dx) Then
             dR = 2 * -t_dx
