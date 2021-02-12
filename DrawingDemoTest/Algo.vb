@@ -49,7 +49,6 @@
         Dim dx = x2 - x1, dy = y2 - y1, x As Single = x1, y As Single = y1
         Dim x_inc, y_inc
         Dim m As Single
-        case1_8(x1, y1, x2, y2, R, G, B)
 
         If x1 < x2 Then
             x_inc = 1
@@ -62,9 +61,9 @@
             y_inc = -1
         End If
         Form1.BMP.SetPixel(x, Math.Round(y), Color.FromArgb(R, G, B))
-        If Math.Abs(dx) > Math.Abs(dy) Then
+        If Math.Abs(dx) >= Math.Abs(dy) Then
             m = dy / dx
-            If x1 > x2 And (y1 < y2 Or y1 > y2) Then
+            If x1 > x2 And (y1 <= y2 Or y1 >= y2) Then
                 m = -m
             End If
             While x < x2 Or x > x2
@@ -72,9 +71,9 @@
                 y += m
                 Form1.BMP.SetPixel(x, Math.Round(y), Color.FromArgb(R, G, B))
             End While
-        ElseIf Math.Abs(dx) < Math.Abs(dy) Then
+        ElseIf Math.Abs(dx) <= Math.Abs(dy) Then
             m = dx / dy
-            If y1 > y2 And (x1 < x2 Or x1 > x2) Then
+            If y1 > y2 And (x1 <= x2 Or x1 >= x2) Then
                 m = -m
             End If
             While y < y2 Or y > y2
@@ -256,75 +255,90 @@
         If Math.Abs(dx) >= Math.Abs(dy) Then
             dR = 2 * t_dy
             dUR = 2 * (t_dy - t_dx)
+            If dR < 0 Then
+                dR = -dR
+            End If
+            If dUR > 0 Then
+                dUR = -dUR
+            End If
             d = 2 * t_dy - t_dx
             While x < x2 Or x > x2
-                If d > 0 Or d < 0 Then
-                    x += x_inc
-                    y += y_inc
-                    d += dUR
+                If d > 0 Then
                     If Form1.chkbxPattern.Checked Then
-
+                        If x < x2 Then
+                            If x_inc = 1 Then
+                                x_inc = 2
+                                d += dUR
+                            ElseIf x_inc = 2 And dif = 0 Then
+                                x_inc = 2
+                                dif += 1
+                                d += dUR
+                            ElseIf x_inc = 2 And dif = 1 Then
+                                x_inc = 1
+                                dif -= 1
+                            End If
+                            x += x_inc
+                            If x >= x2 Then
+                                x -= 1
+                            End If
+                        End If
+                        y += y_inc
+                        d += dUR
+                    Else
+                        x += x_inc
+                        y += y_inc
+                        d += dUR
                     End If
                 Else
                     If Form1.chkbxPattern.Checked Then
-                        If i = 0 Then
-                            i += 1
-                        ElseIf i = 1 Then
-                            i = 2
-                        ElseIf i = 2 And dif = 0 Then
-                            i = 2
-                            dif += 1
-                        ElseIf i = 2 And dif = 1 Then
-                            i = 1
-                            dif -= 1
+                        If x < x2 Then
+                            If x_inc = 1 Then
+                                x_inc = 2
+                                d += dR
+                            ElseIf x_inc = 2 And dif = 0 Then
+                                x_inc = 2
+                                dif += 1
+                                d += dR
+                            ElseIf x_inc = 2 And dif = 1 Then
+                                x_inc = 1
+                                dif -= 1
+                            End If
+                            x += x_inc
+                            If x >= x2 Then
+                                x -= 1
+                            End If
                         End If
-
-                        x += i
                         d += dR
                     Else
                         x += x_inc
                         d += dR
                     End If
                 End If
-
                 Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
             End While
         ElseIf Math.Abs(dy) > Math.Abs(dx) Then
             dR = 2 * -t_dx
             dUR = 2 * (t_dy - t_dx)
+            If dR > 0 Then
+                dR = -dR
+            End If
+            If dUR < 0 Then
+                dUR = -dUR
+            End If
             d = t_dy - 2 * t_dx
-            If d = 0 Then
-                y += y_inc
-                d += dR
-            End If
-            If d > 0 Then
-                While y < y2 Or y > y2
-                    If d > 0 Then
-                        x += x_inc
-                        y += y_inc
-                        d += dUR
-                    Else
-                        y += y_inc
-                        d += dR
-                    End If
-                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
-                End While
-            ElseIf d < 0 Then
-                While y < y2 Or y > y2
-                    If d < 0 Then
-                        x += x_inc
-                        y += y_inc
-                        d += dUR
-                    Else
-                        y += y_inc
-                        d += dR
-                    End If
-                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
-                End While
-            End If
-
+            While y < y2 Or y > y2
+                If d < 0 Then
+                    x += x_inc
+                    y += y_inc
+                    d += dUR
+                Else
+                    y += y_inc
+                    d += dR
+                End If
+                Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+            End While
         End If
-        Form1.PictureBox1.Image = Form1.BMP
+            Form1.PictureBox1.Image = Form1.BMP
     End Sub
 
     Sub Clear()

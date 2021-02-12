@@ -1,6 +1,6 @@
 ﻿Public Class Form1
     Public Red, Green, Blue As Integer
-    Public BMP As New Drawing.Bitmap(500, 400)
+    Public BMP As New Drawing.Bitmap(1000, 1000)
     Dim x1, y1, x2, y2
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
