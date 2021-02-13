@@ -86,78 +86,9 @@
                 End If
             End While
         End If
+        Form1.BMP = Form1.PictureBox1.Image
         Form1.PictureBox1.Image = Form1.BMP
     End Sub
-    'Public Sub MidPoint(x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer, R As Integer, G As Integer, B As Integer)
-    '    Dim dx As Integer, dy As Integer, x As Integer, y As Integer
-    '    Dim dR, dUR, d
-    '    Dim t_dy, t_dx, x_inc, y_inc, i, dif
-
-    '    dx = x2 - x1
-    '    dy = y2 - y1
-    '    x = x1
-    '    y = y1
-
-    '    If x1 < x2 Then
-    '        t_dy = dy
-    '        x_inc = 1
-    '    ElseIf x1 > x2 Then
-    '        t_dy = -dy
-    '        x_inc = -1
-    '    End If
-    '    If y1 < y2 Then
-    '        t_dx = dx
-    '        y_inc = 1
-    '    ElseIf y1 > y2 Then
-    '        t_dx = -dx
-    '        y_inc = -1
-    '    End If
-    '    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
-    '    If Math.Abs(dx) >= Math.Abs(dy) Then
-    '        dR = 2 * t_dy
-    '        dUR = 2 * (t_dy - t_dx)
-    '        If dR < 0 Then
-    '            dR = -dR
-    '        End If
-    '        If dUR > 0 Then
-    '            dUR = -dUR
-    '        End If
-    '        d = 2 * t_dy - t_dx
-    '        While x < x2 Or x > x2
-    '            If d > 0 Then
-    '                x += x_inc
-    '                y += y_inc
-    '                d += dUR
-    '            Else
-    '                x += x_inc
-    '                d += dR
-    '            End If
-    '            Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
-    '        End While
-    '    ElseIf Math.Abs(dy) > Math.Abs(dx) Then
-    '        dR = 2 * -t_dx
-    '        dUR = 2 * (t_dy - t_dx)
-    '        If dR > 0 Then
-    '            dR = -dR
-    '        End If
-    '        If dUR < 0 Then
-    '            dUR = -dUR
-    '        End If
-    '        d = t_dy - 2 * t_dx
-    '        While y < y2 Or y > y2
-    '            If d < 0 Then
-    '                x += x_inc
-    '                y += y_inc
-    '                d += dUR
-    '            Else
-    '                y += y_inc
-    '                d += dR
-    '            End If
-    '            Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
-    '        End While
-    '    End If
-    '    Form1.PictureBox1.Image = Form1.BMP
-    'End Sub
     Public Sub Midpoint(x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer, R As Integer, G As Integer, B As Integer, LL As Integer, BL As Integer, LW As Integer)
         Dim dx As Integer, dy As Integer, x As Integer, y As Integer
         Dim dR, dUR, d
@@ -235,8 +166,6 @@
                     End While
                     j = 1
                 End If
-
-
             End While
         ElseIf Math.Abs(dy) > Math.Abs(dx) Then
             dR = 2 * -t_dx
@@ -279,6 +208,7 @@
                 End If
             End While
         End If
+        Form1.BMP = Form1.PictureBox1.Image
         Form1.PictureBox1.Image = Form1.BMP
     End Sub
 
