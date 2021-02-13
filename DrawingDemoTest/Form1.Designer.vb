@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class DrawingLine
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -468,6 +468,7 @@ Partial Class Form1
         'numLineWeight
         '
         Me.numLineWeight.Location = New System.Drawing.Point(266, 51)
+        Me.numLineWeight.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.numLineWeight.Name = "numLineWeight"
         Me.numLineWeight.Size = New System.Drawing.Size(93, 27)
         Me.numLineWeight.TabIndex = 1
@@ -475,6 +476,7 @@ Partial Class Form1
         'NumBlankLength
         '
         Me.NumBlankLength.Location = New System.Drawing.Point(142, 51)
+        Me.NumBlankLength.Maximum = New Decimal(New Integer() {50, 0, 0, 0})
         Me.NumBlankLength.Name = "NumBlankLength"
         Me.NumBlankLength.Size = New System.Drawing.Size(93, 27)
         Me.NumBlankLength.TabIndex = 1
@@ -482,6 +484,7 @@ Partial Class Form1
         'NumLineLength
         '
         Me.NumLineLength.Location = New System.Drawing.Point(12, 51)
+        Me.NumLineLength.Maximum = New Decimal(New Integer() {50, 0, 0, 0})
         Me.NumLineLength.Name = "NumLineLength"
         Me.NumLineLength.Size = New System.Drawing.Size(93, 27)
         Me.NumLineLength.TabIndex = 1
@@ -517,7 +520,7 @@ Partial Class Form1
         '
         Me.Timer1.Interval = 1
         '
-        'Form1
+        'DrawingLine
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -539,8 +542,8 @@ Partial Class Form1
         Me.Controls.Add(Me.NumY1)
         Me.Controls.Add(Me.btnDraw)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "DrawingLine"
+        Me.Text = "Drawing Line"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumY1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumX2, System.ComponentModel.ISupportInitialize).EndInit()

@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class DrawingLine
     Public Red, Green, Blue As Integer
     Public BMP As New Drawing.Bitmap(1000, 1000)
     Dim x1, y1, x2, y2
@@ -123,6 +123,11 @@
     Private Sub btnPink_Click(sender As Object, e As EventArgs) Handles btnPink.Click
         Color_Palate.colorPal(255, 0, 255)
     End Sub
+
+    Private Sub NumY1_ValueChanged(sender As Object, e As EventArgs) Handles NumY1.ValueChanged
+
+    End Sub
+
     Private Sub btnLGray_Click(sender As Object, e As EventArgs) Handles btnLGray.Click
         Color_Palate.colorPal(192, 192, 192)
     End Sub

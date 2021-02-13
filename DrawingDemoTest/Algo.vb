@@ -16,12 +16,12 @@
         ElseIf y1 > y2 Then
             y_inc = -1
         End If
-        Form1.BMP.SetPixel(x, Math.Round(y), Color.FromArgb(R, G, B))
+        DrawingLine.BMP.SetPixel(x, Math.Round(y), Color.FromArgb(R, G, B))
         While j < LW                                                                '1st set for weight line
             If Math.Abs(dx) >= Math.Abs(dy) Then
-                Form1.BMP.SetPixel(x, Math.Round(y + j), Color.FromArgb(R, G, B))
+                DrawingLine.BMP.SetPixel(x, Math.Round(y + j), Color.FromArgb(R, G, B))
             ElseIf Math.Abs(dy) >= Math.Abs(dx) Then
-                Form1.BMP.SetPixel(Math.Round(x + j), y, Color.FromArgb(R, G, B))
+                DrawingLine.BMP.SetPixel(Math.Round(x + j), y, Color.FromArgb(R, G, B))
             End If
 
             j += 1
@@ -37,9 +37,9 @@
                 y += m
                 If LL > 0 And BL > 0 Then                                           'Dotted Algorithm
                     If i < LL Then
-                        Form1.BMP.SetPixel(x, Math.Round(y), Color.FromArgb(R, G, B))
+                        DrawingLine.BMP.SetPixel(x, Math.Round(y), Color.FromArgb(R, G, B))
                         While j < LW                                                'Dotted + Weight Algorithm
-                            Form1.BMP.SetPixel(x, Math.Round(y + j), Color.FromArgb(R, G, B))
+                            DrawingLine.BMP.SetPixel(x, Math.Round(y + j), Color.FromArgb(R, G, B))
                             j += 1
                         End While
                         j = 1
@@ -48,9 +48,9 @@
                     End If
                     i += 1
                 Else
-                    Form1.BMP.SetPixel(x, Math.Round(y), Color.FromArgb(R, G, B))
+                    DrawingLine.BMP.SetPixel(x, Math.Round(y), Color.FromArgb(R, G, B))
                     While j < LW                                                    'Weight Algorithm
-                        Form1.BMP.SetPixel(x, Math.Round(y + j), Color.FromArgb(R, G, B))
+                        DrawingLine.BMP.SetPixel(x, Math.Round(y + j), Color.FromArgb(R, G, B))
                         j += 1
                     End While
                     j = 1
@@ -66,9 +66,9 @@
                 x += m
                 If LL > 0 And BL > 0 Then                                           'Dotted Algorithm
                     If i < LL Then
-                        Form1.BMP.SetPixel(Math.Round(x), y, Color.FromArgb(R, G, B))
+                        DrawingLine.BMP.SetPixel(Math.Round(x), y, Color.FromArgb(R, G, B))
                         While j < LW                                                'Dotted + Weight Algorithm
-                            Form1.BMP.SetPixel(Math.Round(x + j), y, Color.FromArgb(R, G, B))
+                            DrawingLine.BMP.SetPixel(Math.Round(x + j), y, Color.FromArgb(R, G, B))
                             j += 1
                         End While
                         j = 1
@@ -77,17 +77,17 @@
                     End If
                     i += 1
                 Else
-                    Form1.BMP.SetPixel(Math.Round(x), y, Color.FromArgb(R, G, B))
+                    DrawingLine.BMP.SetPixel(Math.Round(x), y, Color.FromArgb(R, G, B))
                     While j < LW                                                    'Weight Algorithm
-                        Form1.BMP.SetPixel(Math.Round(x + j), y, Color.FromArgb(R, G, B))
+                        DrawingLine.BMP.SetPixel(Math.Round(x + j), y, Color.FromArgb(R, G, B))
                         j += 1
                     End While
                     j = 1
                 End If
             End While
         End If
-        Form1.BMP = Form1.PictureBox1.Image
-        Form1.PictureBox1.Image = Form1.BMP
+        DrawingLine.BMP = DrawingLine.PictureBox1.Image
+        DrawingLine.PictureBox1.Image = DrawingLine.BMP
     End Sub
     Public Sub Midpoint(x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer, R As Integer, G As Integer, B As Integer, LL As Integer, BL As Integer, LW As Integer)
         Dim dx As Integer, dy As Integer, x As Integer, y As Integer
@@ -115,12 +115,12 @@
             t_dx = -dx
             y_inc = -1
         End If
-        Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+        DrawingLine.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
         While j < LW                                                                '1st set for weight line
             If Math.Abs(dx) >= Math.Abs(dy) Then
-                Form1.BMP.SetPixel(x, y + j, Color.FromArgb(R, G, B))
+                DrawingLine.BMP.SetPixel(x, y + j, Color.FromArgb(R, G, B))
             ElseIf Math.Abs(dy) >= Math.Abs(dx) Then
-                Form1.BMP.SetPixel(x + j, y, Color.FromArgb(R, G, B))
+                DrawingLine.BMP.SetPixel(x + j, y, Color.FromArgb(R, G, B))
             End If
 
             j += 1
@@ -148,9 +148,9 @@
                 End If
                 If LL > 0 And BL > 0 Then                                           'Dotted Algorithm
                     If i < LL Then
-                        Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                        DrawingLine.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
                         While j < LW                                                'Dotted + Weight Algorithm
-                            Form1.BMP.SetPixel(x, y + j, Color.FromArgb(R, G, B))
+                            DrawingLine.BMP.SetPixel(x, y + j, Color.FromArgb(R, G, B))
                             j += 1
                         End While
                         j = 1
@@ -159,9 +159,9 @@
                     End If
                     i += 1
                 Else
-                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))               'Normal Line
+                    DrawingLine.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))               'Normal Line
                     While j < LW                                                    'Weight Algorithm
-                        Form1.BMP.SetPixel(x, y + j, Color.FromArgb(R, G, B))
+                        DrawingLine.BMP.SetPixel(x, y + j, Color.FromArgb(R, G, B))
                         j += 1
                     End While
                     j = 1
@@ -188,9 +188,9 @@
                 End If
                 If LL > 0 And BL > 0 Then                                           'Dotted Algorithm
                     If i < LL Then
-                        Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
+                        DrawingLine.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))
                         While j < LW                                                'Dotted + Weight Algorithm
-                            Form1.BMP.SetPixel(x + j, y, Color.FromArgb(R, G, B))
+                            DrawingLine.BMP.SetPixel(x + j, y, Color.FromArgb(R, G, B))
                             j += 1
                         End While
                         j = 1
@@ -199,25 +199,25 @@
                     End If
                     i += 1
                 Else
-                    Form1.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))               'Normal Line
+                    DrawingLine.BMP.SetPixel(x, y, Color.FromArgb(R, G, B))               'Normal Line
                     While j < LW                                                    'Weight Algorithm
-                        Form1.BMP.SetPixel(x + j, y, Color.FromArgb(R, G, B))
+                        DrawingLine.BMP.SetPixel(x + j, y, Color.FromArgb(R, G, B))
                         j += 1
                     End While
                     j = 1
                 End If
             End While
         End If
-        Form1.BMP = Form1.PictureBox1.Image
-        Form1.PictureBox1.Image = Form1.BMP
+        DrawingLine.BMP = DrawingLine.PictureBox1.Image
+        DrawingLine.PictureBox1.Image = DrawingLine.BMP
     End Sub
 
     Sub Clear()
-        For i As Integer = 0 To Form1.BMP.Width - 1
-            For j As Integer = 0 To Form1.BMP.Height - 1
-                Form1.BMP.SetPixel(i, j, Color.Transparent)
+        For i As Integer = 0 To DrawingLine.BMP.Width - 1
+            For j As Integer = 0 To DrawingLine.BMP.Height - 1
+                DrawingLine.BMP.SetPixel(i, j, Color.Transparent)
             Next
         Next
-        Form1.PictureBox1.Image = Form1.BMP
+        DrawingLine.PictureBox1.Image = DrawingLine.BMP
     End Sub
 End Module
