@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnDraw = New System.Windows.Forms.Button()
         Me.NumY1 = New System.Windows.Forms.NumericUpDown()
@@ -44,7 +45,6 @@ Partial Class Form1
         Me.BtnLoad = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.radTest = New System.Windows.Forms.RadioButton()
         Me.RadMidPoint = New System.Windows.Forms.RadioButton()
         Me.RadDDA = New System.Windows.Forms.RadioButton()
         Me.btnOrange = New System.Windows.Forms.Button()
@@ -60,8 +60,15 @@ Partial Class Form1
         Me.btnAqua = New System.Windows.Forms.Button()
         Me.btnDGray = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.chkbxPattern = New System.Windows.Forms.CheckBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.numLineWeight = New System.Windows.Forms.NumericUpDown()
+        Me.NumBlankLength = New System.Windows.Forms.NumericUpDown()
+        Me.NumLineLength = New System.Windows.Forms.NumericUpDown()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumY1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumX2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,6 +80,10 @@ Partial Class Form1
         CType(Me.PicBoxColour, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.numLineWeight, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumBlankLength, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumLineLength, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -85,49 +96,49 @@ Partial Class Form1
         '
         'btnDraw
         '
-        Me.btnDraw.Location = New System.Drawing.Point(664, 433)
+        Me.btnDraw.Location = New System.Drawing.Point(724, 442)
         Me.btnDraw.Name = "btnDraw"
         Me.btnDraw.Size = New System.Drawing.Size(197, 60)
-        Me.btnDraw.TabIndex = 1
-        Me.btnDraw.Text = "Draw"
+        Me.btnDraw.TabIndex = 4
+        Me.btnDraw.Text = "&Draw"
         Me.btnDraw.UseVisualStyleBackColor = True
         '
         'NumY1
         '
-        Me.NumY1.Location = New System.Drawing.Point(737, 320)
+        Me.NumY1.Location = New System.Drawing.Point(750, 340)
         Me.NumY1.Maximum = New Decimal(New Integer() {399, 0, 0, 0})
         Me.NumY1.Name = "NumY1"
-        Me.NumY1.Size = New System.Drawing.Size(120, 27)
+        Me.NumY1.Size = New System.Drawing.Size(171, 27)
         Me.NumY1.TabIndex = 1
         '
         'NumX2
         '
-        Me.NumX2.Location = New System.Drawing.Point(737, 353)
+        Me.NumX2.Location = New System.Drawing.Point(750, 374)
         Me.NumX2.Maximum = New Decimal(New Integer() {499, 0, 0, 0})
         Me.NumX2.Name = "NumX2"
-        Me.NumX2.Size = New System.Drawing.Size(120, 27)
+        Me.NumX2.Size = New System.Drawing.Size(171, 27)
         Me.NumX2.TabIndex = 2
         '
         'NumY2
         '
-        Me.NumY2.Location = New System.Drawing.Point(737, 386)
+        Me.NumY2.Location = New System.Drawing.Point(750, 407)
         Me.NumY2.Maximum = New Decimal(New Integer() {399, 0, 0, 0})
         Me.NumY2.Name = "NumY2"
-        Me.NumY2.Size = New System.Drawing.Size(120, 27)
+        Me.NumY2.Size = New System.Drawing.Size(171, 27)
         Me.NumY2.TabIndex = 3
         '
         'NumX1
         '
-        Me.NumX1.Location = New System.Drawing.Point(737, 287)
+        Me.NumX1.Location = New System.Drawing.Point(750, 307)
         Me.NumX1.Maximum = New Decimal(New Integer() {499, 0, 0, 0})
         Me.NumX1.Name = "NumX1"
-        Me.NumX1.Size = New System.Drawing.Size(120, 27)
+        Me.NumX1.Size = New System.Drawing.Size(171, 27)
         Me.NumX1.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(676, 289)
+        Me.Label1.Location = New System.Drawing.Point(684, 309)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 20)
         Me.Label1.TabIndex = 6
@@ -136,7 +147,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(676, 322)
+        Me.Label2.Location = New System.Drawing.Point(684, 342)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(32, 20)
         Me.Label2.TabIndex = 6
@@ -145,7 +156,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(676, 355)
+        Me.Label3.Location = New System.Drawing.Point(684, 376)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(33, 20)
         Me.Label3.TabIndex = 6
@@ -154,7 +165,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(676, 388)
+        Me.Label4.Location = New System.Drawing.Point(684, 409)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(32, 20)
         Me.Label4.TabIndex = 6
@@ -162,32 +173,32 @@ Partial Class Form1
         '
         'NumGreen
         '
-        Me.NumGreen.Location = New System.Drawing.Point(71, 107)
+        Me.NumGreen.Location = New System.Drawing.Point(81, 104)
         Me.NumGreen.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
         Me.NumGreen.Name = "NumGreen"
-        Me.NumGreen.Size = New System.Drawing.Size(120, 27)
+        Me.NumGreen.Size = New System.Drawing.Size(155, 27)
         Me.NumGreen.TabIndex = 2
         '
         'NumBlue
         '
-        Me.NumBlue.Location = New System.Drawing.Point(71, 140)
+        Me.NumBlue.Location = New System.Drawing.Point(81, 137)
         Me.NumBlue.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
         Me.NumBlue.Name = "NumBlue"
-        Me.NumBlue.Size = New System.Drawing.Size(120, 27)
+        Me.NumBlue.Size = New System.Drawing.Size(155, 27)
         Me.NumBlue.TabIndex = 3
         '
         'NumRed
         '
-        Me.NumRed.Location = New System.Drawing.Point(71, 74)
+        Me.NumRed.Location = New System.Drawing.Point(81, 71)
         Me.NumRed.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
         Me.NumRed.Name = "NumRed"
-        Me.NumRed.Size = New System.Drawing.Size(120, 27)
+        Me.NumRed.Size = New System.Drawing.Size(155, 27)
         Me.NumRed.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(10, 76)
+        Me.Label5.Location = New System.Drawing.Point(10, 73)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(42, 20)
         Me.Label5.TabIndex = 6
@@ -196,7 +207,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(10, 109)
+        Me.Label6.Location = New System.Drawing.Point(10, 106)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(55, 20)
         Me.Label6.TabIndex = 6
@@ -205,7 +216,7 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(10, 142)
+        Me.Label7.Location = New System.Drawing.Point(10, 139)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(45, 20)
         Me.Label7.TabIndex = 6
@@ -214,17 +225,17 @@ Partial Class Form1
         'PicBoxColour
         '
         Me.PicBoxColour.BackColor = System.Drawing.SystemColors.Control
-        Me.PicBoxColour.Location = New System.Drawing.Point(12, 29)
+        Me.PicBoxColour.Location = New System.Drawing.Point(12, 26)
         Me.PicBoxColour.Name = "PicBoxColour"
-        Me.PicBoxColour.Size = New System.Drawing.Size(178, 33)
+        Me.PicBoxColour.Size = New System.Drawing.Size(224, 33)
         Me.PicBoxColour.TabIndex = 7
         Me.PicBoxColour.TabStop = False
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(556, 433)
+        Me.btnClear.Location = New System.Drawing.Point(561, 466)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(77, 60)
+        Me.btnClear.Size = New System.Drawing.Size(77, 36)
         Me.btnClear.TabIndex = 8
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
@@ -256,26 +267,14 @@ Partial Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.radTest)
         Me.GroupBox1.Controls.Add(Me.RadMidPoint)
         Me.GroupBox1.Controls.Add(Me.RadDDA)
-        Me.GroupBox1.Location = New System.Drawing.Point(556, 277)
+        Me.GroupBox1.Location = New System.Drawing.Point(556, 298)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(114, 131)
+        Me.GroupBox1.Size = New System.Drawing.Size(114, 138)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Algorithm"
-        '
-        'radTest
-        '
-        Me.radTest.AutoSize = True
-        Me.radTest.Location = New System.Drawing.Point(16, 91)
-        Me.radTest.Name = "radTest"
-        Me.radTest.Size = New System.Drawing.Size(56, 24)
-        Me.radTest.TabIndex = 2
-        Me.radTest.TabStop = True
-        Me.radTest.Text = "Test"
-        Me.radTest.UseVisualStyleBackColor = True
         '
         'RadMidPoint
         '
@@ -303,7 +302,7 @@ Partial Class Form1
         '
         Me.btnOrange.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnOrange.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnOrange.Location = New System.Drawing.Point(196, 65)
+        Me.btnOrange.Location = New System.Drawing.Point(244, 60)
         Me.btnOrange.Name = "btnOrange"
         Me.btnOrange.Size = New System.Drawing.Size(30, 30)
         Me.btnOrange.TabIndex = 12
@@ -313,7 +312,7 @@ Partial Class Form1
         '
         Me.btnBlue.BackColor = System.Drawing.Color.Blue
         Me.btnBlue.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBlue.Location = New System.Drawing.Point(232, 65)
+        Me.btnBlue.Location = New System.Drawing.Point(280, 60)
         Me.btnBlue.Name = "btnBlue"
         Me.btnBlue.Size = New System.Drawing.Size(30, 30)
         Me.btnBlue.TabIndex = 12
@@ -323,7 +322,7 @@ Partial Class Form1
         '
         Me.btnBrown.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnBrown.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBrown.Location = New System.Drawing.Point(268, 65)
+        Me.btnBrown.Location = New System.Drawing.Point(316, 60)
         Me.btnBrown.Name = "btnBrown"
         Me.btnBrown.Size = New System.Drawing.Size(30, 30)
         Me.btnBrown.TabIndex = 12
@@ -333,7 +332,7 @@ Partial Class Form1
         '
         Me.btnBlack.BackColor = System.Drawing.Color.Black
         Me.btnBlack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBlack.Location = New System.Drawing.Point(268, 101)
+        Me.btnBlack.Location = New System.Drawing.Point(316, 96)
         Me.btnBlack.Name = "btnBlack"
         Me.btnBlack.Size = New System.Drawing.Size(30, 30)
         Me.btnBlack.TabIndex = 12
@@ -343,7 +342,7 @@ Partial Class Form1
         '
         Me.btnYellow.BackColor = System.Drawing.Color.Yellow
         Me.btnYellow.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnYellow.Location = New System.Drawing.Point(196, 101)
+        Me.btnYellow.Location = New System.Drawing.Point(244, 96)
         Me.btnYellow.Name = "btnYellow"
         Me.btnYellow.Size = New System.Drawing.Size(30, 30)
         Me.btnYellow.TabIndex = 12
@@ -353,7 +352,7 @@ Partial Class Form1
         '
         Me.btnPink.BackColor = System.Drawing.Color.Fuchsia
         Me.btnPink.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPink.Location = New System.Drawing.Point(232, 101)
+        Me.btnPink.Location = New System.Drawing.Point(280, 96)
         Me.btnPink.Name = "btnPink"
         Me.btnPink.Size = New System.Drawing.Size(30, 30)
         Me.btnPink.TabIndex = 12
@@ -363,7 +362,7 @@ Partial Class Form1
         '
         Me.BtnWhite.BackColor = System.Drawing.Color.White
         Me.BtnWhite.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnWhite.Location = New System.Drawing.Point(268, 137)
+        Me.BtnWhite.Location = New System.Drawing.Point(316, 132)
         Me.BtnWhite.Name = "BtnWhite"
         Me.BtnWhite.Size = New System.Drawing.Size(30, 30)
         Me.BtnWhite.TabIndex = 12
@@ -373,7 +372,7 @@ Partial Class Form1
         '
         Me.btnGreen.BackColor = System.Drawing.Color.Lime
         Me.btnGreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGreen.Location = New System.Drawing.Point(196, 137)
+        Me.btnGreen.Location = New System.Drawing.Point(244, 132)
         Me.btnGreen.Name = "btnGreen"
         Me.btnGreen.Size = New System.Drawing.Size(30, 30)
         Me.btnGreen.TabIndex = 12
@@ -383,7 +382,7 @@ Partial Class Form1
         '
         Me.btnLGray.BackColor = System.Drawing.Color.Silver
         Me.btnLGray.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLGray.Location = New System.Drawing.Point(232, 137)
+        Me.btnLGray.Location = New System.Drawing.Point(280, 132)
         Me.btnLGray.Name = "btnLGray"
         Me.btnLGray.Size = New System.Drawing.Size(30, 30)
         Me.btnLGray.TabIndex = 12
@@ -393,7 +392,7 @@ Partial Class Form1
         '
         Me.btnRed.BackColor = System.Drawing.Color.Red
         Me.btnRed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRed.Location = New System.Drawing.Point(196, 29)
+        Me.btnRed.Location = New System.Drawing.Point(244, 24)
         Me.btnRed.Name = "btnRed"
         Me.btnRed.Size = New System.Drawing.Size(30, 30)
         Me.btnRed.TabIndex = 12
@@ -403,7 +402,7 @@ Partial Class Form1
         '
         Me.btnAqua.BackColor = System.Drawing.Color.Aqua
         Me.btnAqua.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAqua.Location = New System.Drawing.Point(232, 29)
+        Me.btnAqua.Location = New System.Drawing.Point(280, 24)
         Me.btnAqua.Name = "btnAqua"
         Me.btnAqua.Size = New System.Drawing.Size(30, 30)
         Me.btnAqua.TabIndex = 12
@@ -413,7 +412,7 @@ Partial Class Form1
         '
         Me.btnDGray.BackColor = System.Drawing.Color.Gray
         Me.btnDGray.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDGray.Location = New System.Drawing.Point(268, 29)
+        Me.btnDGray.Location = New System.Drawing.Point(316, 24)
         Me.btnDGray.Name = "btnDGray"
         Me.btnDGray.Size = New System.Drawing.Size(30, 30)
         Me.btnDGray.TabIndex = 12
@@ -440,33 +439,90 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.btnRed)
         Me.GroupBox2.Controls.Add(Me.btnAqua)
         Me.GroupBox2.Controls.Add(Me.btnBlack)
-        Me.GroupBox2.Location = New System.Drawing.Point(556, 38)
+        Me.GroupBox2.Location = New System.Drawing.Point(556, 27)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(310, 177)
+        Me.GroupBox2.Size = New System.Drawing.Size(365, 177)
         Me.GroupBox2.TabIndex = 13
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Color Setting"
         '
-        'chkbxPattern
-        '
-        Me.chkbxPattern.AutoSize = True
-        Me.chkbxPattern.Location = New System.Drawing.Point(566, 247)
-        Me.chkbxPattern.Name = "chkbxPattern"
-        Me.chkbxPattern.Size = New System.Drawing.Size(123, 24)
-        Me.chkbxPattern.TabIndex = 14
-        Me.chkbxPattern.Text = "Dotted Patern"
-        Me.chkbxPattern.UseVisualStyleBackColor = True
-        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.numLineWeight)
+        Me.GroupBox3.Controls.Add(Me.NumBlankLength)
+        Me.GroupBox3.Controls.Add(Me.NumLineLength)
+        Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.Controls.Add(Me.Label9)
+        Me.GroupBox3.Controls.Add(Me.Label8)
+        Me.GroupBox3.Location = New System.Drawing.Point(556, 205)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(365, 87)
+        Me.GroupBox3.TabIndex = 14
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Custom Design"
+        '
+        'numLineWeight
+        '
+        Me.numLineWeight.Location = New System.Drawing.Point(266, 51)
+        Me.numLineWeight.Name = "numLineWeight"
+        Me.numLineWeight.Size = New System.Drawing.Size(93, 27)
+        Me.numLineWeight.TabIndex = 1
+        '
+        'NumBlankLength
+        '
+        Me.NumBlankLength.Location = New System.Drawing.Point(142, 51)
+        Me.NumBlankLength.Name = "NumBlankLength"
+        Me.NumBlankLength.Size = New System.Drawing.Size(93, 27)
+        Me.NumBlankLength.TabIndex = 1
+        '
+        'NumLineLength
+        '
+        Me.NumLineLength.Location = New System.Drawing.Point(12, 51)
+        Me.NumLineLength.Name = "NumLineLength"
+        Me.NumLineLength.Size = New System.Drawing.Size(93, 27)
+        Me.NumLineLength.TabIndex = 1
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(266, 23)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(87, 20)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "Line Weight"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(141, 23)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(94, 20)
+        Me.Label9.TabIndex = 0
+        Me.Label9.Text = "Blank Length"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 23)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(85, 20)
+        Me.Label8.TabIndex = 0
+        Me.Label8.Text = "Line Length"
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1036, 621)
-        Me.Controls.Add(Me.chkbxPattern)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TextBox1)
@@ -498,6 +554,11 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        CType(Me.numLineWeight, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumBlankLength, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumLineLength, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -527,7 +588,6 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents RadMidPoint As RadioButton
     Friend WithEvents RadDDA As RadioButton
-    Friend WithEvents radTest As RadioButton
     Friend WithEvents btnOrange As Button
     Friend WithEvents btnBlue As Button
     Friend WithEvents btnBrown As Button
@@ -541,6 +601,13 @@ Partial Class Form1
     Friend WithEvents btnAqua As Button
     Friend WithEvents btnDGray As Button
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents chkbxPattern As CheckBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents numLineWeight As NumericUpDown
+    Friend WithEvents NumBlankLength As NumericUpDown
+    Friend WithEvents NumLineLength As NumericUpDown
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Timer1 As Timer
 End Class

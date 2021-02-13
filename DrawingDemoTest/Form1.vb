@@ -10,14 +10,14 @@
     End Sub
 
     Private Sub btnDraw_Click(sender As Object, e As EventArgs) Handles btnDraw.Click
-        If RadDDA.Checked Then
-            Algo.DDA(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
-        ElseIf RadMidPoint.Checked Then
-            Algo.MidPoint(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
-        ElseIf radTest.Checked Then
-            Algo.Test(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
-        End If
+        Timer1.Start()
 
+        If RadDDA.Checked Then
+            Algo.DDA(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue, NumLineLength.Value, NumBlankLength.Value, numLineWeight.Value)
+        ElseIf RadMidPoint.Checked Then
+            Algo.Midpoint(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue, NumLineLength.Value, NumBlankLength.Value, numLineWeight.Value)
+        End If
+        Timer1.Stop()
     End Sub
     Private Sub NumRed_ValueChanged(sender As Object, e As EventArgs) Handles NumRed.ValueChanged
         Red = Convert.ToInt32(NumRed.Value)
@@ -86,11 +86,9 @@
         NumX2.Value = x2
         NumY2.Value = y2
         If RadDDA.Checked Then
-            Algo.DDA(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
+            Algo.DDA(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue, NumLineLength.Value, NumBlankLength.Value, numLineWeight.Value)
         ElseIf RadMidPoint.Checked Then
-            Algo.MidPoint(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
-        ElseIf radTest.Checked Then
-            Algo.Test(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue)
+            Algo.Midpoint(NumX1.Value, NumY1.Value, NumX2.Value, NumY2.Value, Red, Green, Blue, NumLineLength.Value, NumBlankLength.Value, numLineWeight.Value)
         End If
     End Sub
 
@@ -140,4 +138,5 @@
     Private Sub BtnWhite_Click(sender As Object, e As EventArgs) Handles BtnWhite.Click
         Color_Palate.colorPal(255, 255, 255)
     End Sub
+
 End Class
